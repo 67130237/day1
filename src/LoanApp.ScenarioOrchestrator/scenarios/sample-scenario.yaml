@@ -1,0 +1,12 @@
+scenarioId: sample-01
+users: 20
+rps: 8
+durationSeconds: 0
+thinkTimeSeconds: { min: 1, max: 2 }
+features:
+  - name: loan-apply
+    weight: 0.4
+  - name: payment-due
+    weight: 0.4
+  - name: browse-products
+    weight: 0.2
