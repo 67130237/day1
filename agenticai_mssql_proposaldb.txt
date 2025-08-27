@@ -1,0 +1,350 @@
+# 📑 Proposal (Draft)
+
+## หัวข้อวิทยานิพนธ์ (Thesis Title)
+**Agentic AI Framework โดยใช้ Model Context Protocol (MCP) ร่วมกับ MssqlTooling และ Retrieval-Augmented Generation (RAG) เพื่อสืบค้นข้อมูลลูกค้าบริการสินเชื่อ**
+
+---
+
+## 1. บทนำ (Introduction)
+
+### 1.1 ความเป็นมาและความสำคัญของปัญหา
+ระบบบริการสินเชื่อในสถาบันการเงินมักมีฐานข้อมูลขนาดใหญ่ที่เก็บข้อมูลลูกค้า ประวัติการกู้ยืม การชำระหนี้ และนโยบายสินเชื่อ การสืบค้นข้อมูลจากฐานข้อมูลเหล่านี้ด้วยภาษา SQL โดยตรงต้องอาศัยทักษะเฉพาะ ทำให้ผู้ใช้ทั่วไปหรือเจ้าหน้าที่ที่ไม่ใช่สาย IT ประสบปัญหาในการเข้าถึงข้อมูลอย่างมีประสิทธิภาพ  
+
+ในช่วงหลังมานี้ **Agentic AI** และ **Model Context Protocol (MCP)** ได้รับความสนใจในฐานะวิธีมาตรฐานสำหรับการเชื่อมต่อ LLM กับเครื่องมือ (Tooling) ภายนอก เช่น SQL Database ร่วมกับ **Retrieval-Augmented Generation (RAG)** ที่ช่วยให้การตอบกลับมีข้อมูลประกอบที่น่าเชื่อถือมากขึ้น จึงมีศักยภาพสูงในการพัฒนาระบบสืบค้นข้อมูลลูกค้าสินเชื่อที่ใช้ง่าย ถูกต้อง และตรวจสอบได้
+
+### 1.2 วัตถุประสงค์การวิจัย
+1. เพื่อออกแบบและพัฒนา **Agentic AI Framework** โดยใช้ MCP Server เชื่อมต่อกับ MSSQL Database ผ่าน MssqlTooling
+2. เพื่อผสาน **RAG** ในการดึงบริบท เช่น นโยบายการให้สินเชื่อ หรือคู่มือการใช้งาน เพื่อช่วยให้คำตอบของระบบมีความสมบูรณ์
+3. เพื่อประเมินประสิทธิภาพของระบบโดยใช้ **Q&A Test set** และ **Consistency check**
+
+### 1.3 คำถามวิจัย (Research Questions)
+- ระบบ Agentic AI + MCP + MssqlTooling + RAG สามารถสืบค้นข้อมูลลูกค้าสินเชื่อได้ถูกต้องเพียงใด?
+- RAG มีส่วนช่วยเพิ่มความถูกต้องและความสม่ำเสมอ (consistency) ของคำตอบหรือไม่?
+- การตอบสนองของระบบมีความเร็วและใช้งานง่ายในระดับที่เหมาะสมสำหรับผู้ใช้ปลายทางหรือไม่?
+
+### 1.4 ขอบเขตการวิจัย (Scope)
+- ใช้ **ฐานข้อมูล MSSQL จำลอง** (synthetic dataset) ที่ประกอบด้วยข้อมูลลูกค้าสินเชื่อ ข้อมูลการกู้ การชำระหนี้
+- สร้าง **Prototype MCP Server** ที่เปิดเผย MssqlTooling และ RAG Tool ให้ Agentic AI เรียกใช้
+- ทำการทดสอบด้วย **ชุดคำถาม–คำตอบ (Q&A Test Set) จำนวน 15–20 ข้อ**
+- เปรียบเทียบ **DB-only Query** กับ **DB+RAG**
+
+### 1.5 ประโยชน์ที่คาดว่าจะได้รับ
+- ได้ต้นแบบระบบสืบค้นข้อมูลลูกค้าสินเชื่อที่เป็นมิตรกับผู้ใช้ (user-friendly) และอธิบายได้
+- เป็นกรอบแนวทางการประยุกต์ใช้ Agentic AI + MCP + RAG ในระบบสารสนเทศด้านการเงิน
+- สนับสนุนการวิจัยเชิงประยุกต์ด้าน **AI for Finance** และ **Explainable AI**
+
+---
+
+## 2. ทบทวนวรรณกรรม (Related Work)
+
+### 2.1 Agentic AI
+งาน survey ล่าสุดระบุว่า Agentic AI แตกต่างจาก AI แบบดั้งเดิมเพราะมีความสามารถด้าน **autonomy, adaptability, goal-orientation** และถูกนำไปใช้ในด้านการเงิน การดูแลสุขภาพ และระบบ adaptive software【57†source】
+
+### 2.2 Model Context Protocol (MCP)
+MCP เป็นมาตรฐานใหม่ (2024–2025) ที่ออกแบบเพื่อเชื่อมต่อ LLM กับ Tooling/Resource ต่าง ๆ อย่างเป็นระบบ รองรับการเรียกใช้ SQL Tool, Vector Store, และ Prompt Template【53†source】
+
+### 2.3 Retrieval-Augmented Generation (RAG)
+RAG ได้รับการพิสูจน์ว่าเพิ่มความถูกต้องของ LLM โดยการดึง knowledge ภายนอกมาเป็น context และลดการเกิด hallucination เหมาะสำหรับงานที่ต้องใช้ข้อมูล structured + unstructured【59†source】
+
+### 2.4 งานวิจัยที่เกี่ยวข้อง
+- **LLM-based Event Log Analysis Survey**: ใช้ LLM + RAG วิเคราะห์ log และตรวจจับ anomaly【59†source】
+- **Knowledge Graph for Accountability**: ใช้ graph เชื่อมโยงข้อมูลเพื่อเพิ่มความโปร่งใสและ audit trail【58†source】
+- **Retail Resilience Engine**: ใช้ Agentic AI + TDD สร้างระบบ retail ที่เชื่อถือได้【57†source】
+
+---
+
+## 3. ระเบียบวิธีวิจัย (Methodology)
+
+### 3.1 การออกแบบระบบ (System Design)
+1. **ฐานข้อมูล MSSQL**: สร้าง schema ข้อมูลลูกค้าสินเชื่อ (Customer, Loan, Payment)
+2. **MCP Server**: เปิดเผย tools ได้แก่
+   - `MssqlTooling` → query MSSQL
+   - `RagTool` → ดึง context จาก policy/เอกสาร
+3. **Agentic AI**: รับคำถามจากผู้ใช้ → Plan tool call → Query DB + RAG → สรุปผลลัพธ์
+
+### 3.2 Database Schema (Proposed)
+```sql
+-- ตารางลูกค้า
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CitizenID NVARCHAR(20) UNIQUE NOT NULL,
+    FullName NVARCHAR(100) NOT NULL,
+    BirthDate DATE,
+    Phone NVARCHAR(20),
+    Email NVARCHAR(100),
+    CreateDate DATETIME DEFAULT GETDATE()
+);
+
+-- ตารางสินเชื่อ
+CREATE TABLE Loans (
+    LoanID INT PRIMARY KEY,
+    CustomerID INT FOREIGN KEY REFERENCES Customers(CustomerID),
+    LoanType NVARCHAR(50),
+    Amount DECIMAL(18,2),
+    InterestRate DECIMAL(5,2),
+    StartDate DATE,
+    EndDate DATE,
+    Status NVARCHAR(20) -- Active, Closed, Defaulted
+);
+
+-- ตารางการชำระหนี้
+CREATE TABLE Payments (
+    PaymentID INT PRIMARY KEY,
+    LoanID INT FOREIGN KEY REFERENCES Loans(LoanID),
+    PaymentDate DATE,
+    AmountPaid DECIMAL(18,2),
+    Method NVARCHAR(50),
+    RecordedAt DATETIME DEFAULT GETDATE()
+);
+
+-- ตารางนโยบาย/เงื่อนไขสินเชื่อ (สำหรับใช้กับ RAG)
+CREATE TABLE LoanPolicies (
+    PolicyID INT PRIMARY KEY,
+    Title NVARCHAR(200),
+    Description NVARCHAR(MAX),
+    EffectiveDate DATE,
+    ExpiryDate DATE NULL
+);
+```
+
+### 3.3 การสร้าง Q&A Test Set
+- เตรียมคำถาม 15–20 ข้อ ครอบคลุม
+  - Lookup (ยอดหนี้ของลูกค้า A)
+  - Aggregation (จำนวนการกู้ใหม่ในเดือนสิงหาคม)
+  - Filter + Join (ลูกค้าที่ค้างชำระ >30 วัน)
+  - Policy (เกณฑ์อนุมัติสินเชื่อ)
+- สร้าง **Ground Truth Answer** จาก SQL Query + เอกสารประกอบ
+
+### 3.4 การประเมินผล (Evaluation)
+- **Accuracy**: วัดคำตอบตรงกับ ground truth
+- **Consistency**: ทำซ้ำหลายรอบและทดสอบ paraphrase → ดูคำตอบเหมือนกันกี่ %
+- **Response Time**: เวลาที่ใช้ในการตอบกลับ
+- **(เสริม) Usability**: แบบสอบถามผู้ใช้
+
+### 3.5 ตารางวัตถุประสงค์–ตัวชี้วัด–วิธีการประเมิน
+
+| วัตถุประสงค์ | ตัวชี้วัด (Metrics) | วิธีการประเมิน |
+|---------------|----------------------|------------------|
+| พัฒนา Agentic AI Framework เชื่อมต่อ MCP + MSSQL | ความถูกต้องของ query และผลลัพธ์ (Accuracy %) | ทดสอบด้วย Q&A Test Set เปรียบเทียบกับ Ground Truth |
+| ผสาน RAG เพื่อเสริมความสมบูรณ์ของคำตอบ | ความครบถ้วน (Completeness), ลด Hallucination | เปรียบเทียบผล DB-only กับ DB+RAG, ตรวจสอบ grounded references |
+| ประเมินคุณภาพการตอบของระบบ | Accuracy, Consistency, Response Time | ทำ Intra-run test, Paraphrase test, Inter-model test |
+| ตรวจสอบการใช้งานจริง | คะแนนความพึงพอใจผู้ใช้ (Usability Score) | แบบสอบถาม 5-point Likert scale หรือ SUS |
+
+### 3.6 เครื่องมือที่ใช้
+- MSSQL Server
+- MCP Server (Custom implementation)
+- LLM API (OpenAI / Local LLM)
+- Vector DB (เช่น Qdrant, FAISS)
+
+---
+
+## 4. แผนการดำเนินงาน (Timeline)
+- เดือน 1–2: ศึกษางานวิจัยและออกแบบระบบ
+- เดือน 3–4: สร้างฐานข้อมูล MSSQL และพัฒนา MCP Server + Tools
+- เดือน 5–6: รวม RAG และสร้าง Prototype
+- เดือน 7: เตรียม Q&A Test Set และ Ground Truth
+- เดือน 8: ทำการทดสอบและเก็บผล
+- เดือน 9: วิเคราะห์ผลและเขียนวิทยานิพนธ์
+
+---
+
+## 5. สรุป
+หัวข้อวิจัยนี้มีความใหม่และเหมาะสมกับระดับปริญญาโท เน้นการสร้าง **prototype** ที่ผสาน Agentic AI, MCP Server, MssqlTooling และ RAG เพื่อสืบค้นข้อมูลลูกค้าสินเชื่อ และมีการวัดผลด้วย Q&A Test Set + Consistency check เพื่อประเมินคุณภาพและความน่าเชื่อถือของระบบ
+
+---
+
+## 6. Database Schema (MSSQL)
+
+> **หลักการออกแบบ**: แยกข้อมูลลูกค้า, สินเชื่อ, และการชำระหนี้ออกจากกันอย่างชัดเจน, เก็บประวัติสถานะ, รองรับ audit/trace เพื่อเชื่อมกับ RAG และความโปร่งใส
+
+### 6.1 ER Diagram (Mermaid)
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ ADDRESS : has
+    CUSTOMER ||--o{ CONTACT : has
+    CUSTOMER ||--o{ EMPLOYMENT : has
+    CUSTOMER ||--o{ APPLICATION : applies
+    APPLICATION ||--|| LOAN : results_in
+    APPLICATION ||--o{ APPLICATION_STATUS_HISTORY : tracked_by
+    LOAN ||--o{ PAYMENT : has
+    LOAN }o--|| LOAN_TYPE : of
+    LOAN ||--o{ DELINQUENCY : may_have
+    CUSTOMER ||--o{ CREDIT_SCORE : has
+```
+
+### 6.2 ตารางหลัก
+
+#### 6.2.1 CUSTOMER
+```sql
+CREATE TABLE dbo.Customer (
+    CustomerId         BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CitizenIdHash      CHAR(64)       NOT NULL,   -- SHA-256 ของเลขบัตร
+    Title              NVARCHAR(16)   NULL,
+    FirstName          NVARCHAR(100)  NOT NULL,
+    LastName           NVARCHAR(100)  NOT NULL,
+    BirthDate          DATE           NULL,
+    RiskSegment        NVARCHAR(32)   NULL,       -- e.g. A/B/C
+    CreatedAt          DATETIME2(3)   NOT NULL DEFAULT SYSUTCDATETIME(),
+    UpdatedAt          DATETIME2(3)   NOT NULL DEFAULT SYSUTCDATETIME(),
+    CONSTRAINT UX_Customer_Citizen UNIQUE (CitizenIdHash)
+);
+```
+
+#### 6.2.2 ADDRESS (หลายรายการต่อบุคคล)
+```sql
+CREATE TABLE dbo.Address (
+    AddressId   BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId  BIGINT        NOT NULL REFERENCES dbo.Customer(CustomerId),
+    AddressType NVARCHAR(32)  NOT NULL,   -- home, work, mailing
+    Line1       NVARCHAR(200) NOT NULL,
+    Line2       NVARCHAR(200) NULL,
+    District    NVARCHAR(100) NULL,
+    Province    NVARCHAR(100) NULL,
+    PostalCode  NVARCHAR(10)  NULL,
+    Country     NVARCHAR(64)  NULL,
+    IsPrimary   BIT           NOT NULL DEFAULT 0
+);
+CREATE INDEX IX_Address_Customer ON dbo.Address(CustomerId, IsPrimary DESC);
+```
+
+#### 6.2.3 CONTACT (ช่องทางติดต่อ)
+```sql
+CREATE TABLE dbo.Contact (
+    ContactId   BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId  BIGINT        NOT NULL REFERENCES dbo.Customer(CustomerId),
+    ContactType NVARCHAR(32)  NOT NULL, -- phone, email, line, etc.
+    ContactValue NVARCHAR(128) NOT NULL,
+    IsPrimary   BIT           NOT NULL DEFAULT 0
+);
+CREATE INDEX IX_Contact_Customer ON dbo.Contact(CustomerId, IsPrimary DESC);
+```
+
+#### 6.2.4 EMPLOYMENT (ประวัติการจ้างงาน)
+```sql
+CREATE TABLE dbo.Employment (
+    EmploymentId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId   BIGINT        NOT NULL REFERENCES dbo.Customer(CustomerId),
+    EmployerName NVARCHAR(200) NOT NULL,
+    Position     NVARCHAR(100) NULL,
+    StartDate    DATE          NULL,
+    MonthlyIncome DECIMAL(18,2) NULL,
+    IsCurrent    BIT           NOT NULL DEFAULT 1
+);
+CREATE INDEX IX_Employment_Current ON dbo.Employment(CustomerId, IsCurrent DESC);
+```
+
+#### 6.2.5 CREDIT_SCORE (เวอร์ชันตามเวลา)
+```sql
+CREATE TABLE dbo.Credit_Score (
+    CreditScoreId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId    BIGINT       NOT NULL REFERENCES dbo.Customer(CustomerId),
+    Bureau        NVARCHAR(64) NOT NULL, -- e.g. NCB
+    Score         INT          NOT NULL,
+    ScoreDate     DATE         NOT NULL,
+    Remark        NVARCHAR(200) NULL
+);
+CREATE INDEX IX_CreditScore_Customer ON dbo.Credit_Score(CustomerId, ScoreDate DESC);
+```
+
+#### 6.2.6 LOAN_TYPE
+```sql
+CREATE TABLE dbo.Loan_Type (
+    LoanTypeId  INT IDENTITY(1,1) PRIMARY KEY,
+    Code        NVARCHAR(32)  NOT NULL UNIQUE, -- e.g. AUTO, PERS, SME
+    Name        NVARCHAR(100) NOT NULL,
+    InterestMethod NVARCHAR(32) NULL -- flat, effective
+);
+```
+
+#### 6.2.7 APPLICATION และสถานะ
+```sql
+CREATE TABLE dbo.Application (
+    ApplicationId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId    BIGINT       NOT NULL REFERENCES dbo.Customer(CustomerId),
+    LoanTypeId    INT          NOT NULL REFERENCES dbo.Loan_Type(LoanTypeId),
+    RequestedAmount DECIMAL(18,2) NOT NULL,
+    TermMonths    INT          NOT NULL,
+    SubmittedAt   DATETIME2(3) NOT NULL DEFAULT SYSUTCDATETIME(),
+    Decision      NVARCHAR(32) NULL,  -- approved/rejected/pending
+    DecidedAt     DATETIME2(3) NULL
+);
+
+CREATE TABLE dbo.Application_Status_History (
+    HistoryId     BIGINT IDENTITY(1,1) PRIMARY KEY,
+    ApplicationId BIGINT       NOT NULL REFERENCES dbo.Application(ApplicationId),
+    Status        NVARCHAR(32) NOT NULL,
+    Note          NVARCHAR(200) NULL,
+    ChangedAt     DATETIME2(3) NOT NULL DEFAULT SYSUTCDATETIME()
+);
+CREATE INDEX IX_AppHist_App ON dbo.Application_Status_History(ApplicationId, ChangedAt DESC);
+```
+
+#### 6.2.8 LOAN (สัญญา)
+```sql
+CREATE TABLE dbo.Loan (
+    LoanId       BIGINT IDENTITY(1,1) PRIMARY KEY,
+    ApplicationId BIGINT      NOT NULL UNIQUE REFERENCES dbo.Application(ApplicationId),
+    CustomerId   BIGINT       NOT NULL REFERENCES dbo.Customer(CustomerId),
+    LoanTypeId   INT          NOT NULL REFERENCES dbo.Loan_Type(LoanTypeId),
+    Principal    DECIMAL(18,2) NOT NULL,
+    InterestRate DECIMAL(9,4)  NOT NULL, -- annual %
+    StartDate    DATE          NOT NULL,
+    MaturityDate DATE          NOT NULL,
+    Status       NVARCHAR(32)  NOT NULL DEFAULT 'active' -- active/closed/default
+);
+CREATE INDEX IX_Loan_Customer ON dbo.Loan(CustomerId, Status);
+```
+
+#### 6.2.9 PAYMENT (งวดชำระ)
+```sql
+CREATE TABLE dbo.Payment (
+    PaymentId    BIGINT IDENTITY(1,1) PRIMARY KEY,
+    LoanId       BIGINT       NOT NULL REFERENCES dbo.Loan(LoanId),
+    DueDate      DATE         NOT NULL,
+    AmountDue    DECIMAL(18,2) NOT NULL,
+    PaidAmount   DECIMAL(18,2) NOT NULL DEFAULT 0,
+    PaidDate     DATE         NULL,
+    Status       NVARCHAR(32) NOT NULL DEFAULT 'due' -- due, paid, overdue, partial
+);
+CREATE INDEX IX_Payment_LoanDue ON dbo.Payment(LoanId, DueDate);
+```
+
+#### 6.2.10 DELINQUENCY (สถานะค้างชำระ)
+```sql
+CREATE TABLE dbo.Delinquency (
+    DelinquencyId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    LoanId        BIGINT       NOT NULL REFERENCES dbo.Loan(LoanId),
+    DaysPastDue   INT          NOT NULL,
+    Bucket        NVARCHAR(16) NOT NULL, -- 1-30,31-60,61-90,>90
+    SnapshotDate  DATE         NOT NULL,
+    Remark        NVARCHAR(200) NULL
+);
+CREATE INDEX IX_Delinquency_LoanDate ON dbo.Delinquency(LoanId, SnapshotDate DESC);
+```
+
+### 6.3 มุมมอง (Views) สำหรับ Q&A
+
+```sql
+CREATE VIEW dbo.vw_Customer_ActiveLoans AS
+SELECT c.CustomerId, c.FirstName, c.LastName, l.LoanId, l.Principal, l.Status
+FROM dbo.Customer c
+JOIN dbo.Loan l ON l.CustomerId = c.CustomerId AND l.Status = 'active';
+
+CREATE VIEW dbo.vw_Loan_Overdue AS
+SELECT l.LoanId, l.CustomerId, p.DueDate, p.AmountDue, p.PaidAmount,
+       DATEDIFF(DAY, p.DueDate, ISNULL(p.PaidDate, CAST(SYSUTCDATETIME() AS DATE))) AS DaysPastDue
+FROM dbo.Loan l
+JOIN dbo.Payment p ON p.LoanId = l.LoanId
+WHERE (p.PaidDate IS NULL AND p.DueDate < CAST(SYSUTCDATETIME() AS DATE))
+   OR (p.PaidAmount < p.AmountDue AND p.DueDate < CAST(SYSUTCDATETIME() AS DATE));
+```
+
+### 6.4 ดัชนีและประสิทธิภาพ (Indexing Hints)
+- คำถามยอดฮิต: **ยอดหนี้คงค้าง, ลูกค้าค้างชำระ > X วัน, จำนวนการกู้ใหม่ตามเดือน**  
+- แนะนำดัชนีเพิ่ม: `(Payment.LoanId, Status, DueDate)`, `(Loan.CustomerId, Status)`, `(Application.SubmittedAt)`
+
+### 6.5 ความปลอดภัยและความเป็นส่วนตัว (PII)
+- เก็บเลขบัตรประชาชนเป็น **Hash (SHA-256)** และทำ **masking** ที่ชั้นแอป (เช่น แสดงเฉพาะ 6 ตัวท้าย)
+- จำกัดสิทธิ์ด้วย **Database Role** สำหรับ read-only และใช้ **Always Encrypted/Transparent Data Encryption (TDE)** ตามความเหมาะสม
+- บันทึก audit trail ผ่านตารางประวัติ (e.g., `Application_Status_History`) เชื่อมโยงกับ RAG เพื่อการอ้างอิง
+
