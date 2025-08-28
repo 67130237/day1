@@ -1,10 +1,11 @@
-\
 using Elastic.Apm.AspNetCore;
 using Microsoft.AspNetCore.Http.Json;
 using Project.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration["ServiceName"] = Environment.GetEnvironmentVariable("SERVICE_NAME") ?? "unknown";
+builder.Configuration["ServiceName"] = "account-service";
+var ServiceName = builder.Configuration["ServiceName"];
+builder.Services.AddElasticsearchLogging($"request-{ServiceName}");
 
 builder.Services.Configure<JsonOptions>(o =>
 {
@@ -14,12 +15,13 @@ builder.Services.Configure<JsonOptions>(o =>
 var app = builder.Build();
 
 app.UseElasticApm(builder.Configuration);
+app.UseRequestLogging();
 app.UseMiddleware<SourceHeaderMiddleware>();
-app.UseMiddleware<TraceIdRequiredMiddleware>();
+//app.UseMiddleware<TraceIdRequiredMiddleware>();
 app.UseMiddleware<FaultMiddleware>();
 
 app.MapGet("/ping", () => Results.Ok(new { ok = true }));
-\
+
 app.MapGet("/xapi/v1/accounts", async (HttpContext ctx) =>
 {
     var resp = new {
@@ -28,7 +30,7 @@ app.MapGet("/xapi/v1/accounts", async (HttpContext ctx) =>
         },
         nextPageToken = (string?)null
     };
-    await ctx.Response.WriteAsJsonAsync(resp);
+    return Results.Ok(resp);
 })
 .WithName("AccList")
 .Produces(StatusCodes.Status200OK);
@@ -41,6 +43,7 @@ app.MapGet("/xapi/v1/accounts/{accountId}/balance", async (HttpContext ctx, stri
         return;
     }
     var resp = new { accountId, available = "1000.00", ledger = "1000.00", currency = "THB", asOf = DateTimeOffset.Now.ToString("o") };
+
     await ctx.Response.WriteAsJsonAsync(resp);
 })
 .WithName("AccBalance")

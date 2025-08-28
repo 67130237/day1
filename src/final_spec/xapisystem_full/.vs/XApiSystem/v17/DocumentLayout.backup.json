@@ -1,0 +1,277 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F890D15-5C09-3795-9F32-EC00A6A0C7E4}|src\\system\\account\\AccountService\\AccountService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\account\\accountservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F890D15-5C09-3795-9F32-EC00A6A0C7E4}|src\\system\\account\\AccountService\\AccountService.csproj|solutionrelative:src\\system\\account\\accountservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38FBFDD4-9FC6-1FEE-25BB-951A7D0C9389}|src\\system\\auth\\AuthService\\AuthService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\auth\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38FBFDD4-9FC6-1FEE-25BB-951A7D0C9389}|src\\system\\auth\\AuthService\\AuthService.csproj|solutionrelative:src\\system\\auth\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9331F91-6825-434B-85E9-C31307EC4617}|src\\system\\appsettings\\AppSettingsService\\AppSettingsService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\appsettings\\appsettingsservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9331F91-6825-434B-85E9-C31307EC4617}|src\\system\\appsettings\\AppSettingsService\\AppSettingsService.csproj|solutionrelative:src\\system\\appsettings\\appsettingsservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EA674D0-AB6B-45D4-9EBA-43FE6BE687D1}|src\\system\\cms\\CmsService\\CmsService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\cms\\cmsservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EA674D0-AB6B-45D4-9EBA-43FE6BE687D1}|src\\system\\cms\\CmsService\\CmsService.csproj|solutionrelative:src\\system\\cms\\cmsservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9F2BCBA-0804-49CF-CBBF-FB2F76D223BD}|src\\system\\customer\\CustomerService\\CustomerService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\customer\\customerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9F2BCBA-0804-49CF-CBBF-FB2F76D223BD}|src\\system\\customer\\CustomerService\\CustomerService.csproj|solutionrelative:src\\system\\customer\\customerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CD994E5-77D1-4B67-65F0-EC1020E73DB4}|src\\system\\dashboard\\DashboardService\\DashboardService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dashboard\\dashboardservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CD994E5-77D1-4B67-65F0-EC1020E73DB4}|src\\system\\dashboard\\DashboardService\\DashboardService.csproj|solutionrelative:src\\system\\dashboard\\dashboardservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F21794A-C095-6BD0-1B7A-4E3B0DDCB6F1}|src\\system\\disbursement\\DisbursementService\\DisbursementService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\disbursement\\disbursementservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F21794A-C095-6BD0-1B7A-4E3B0DDCB6F1}|src\\system\\disbursement\\DisbursementService\\DisbursementService.csproj|solutionrelative:src\\system\\disbursement\\disbursementservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A781B35-23D8-4862-9978-C8581EC68D53}|src\\system\\dopa\\DopaService\\DopaService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\dopaservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A781B35-23D8-4862-9978-C8581EC68D53}|src\\system\\dopa\\DopaService\\DopaService.csproj|solutionrelative:src\\system\\dopa\\dopaservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5228375E-99D3-82D9-6635-122F6801D253}|src\\system\\identity\\IdentityService\\IdentityService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\identity\\identityservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5228375E-99D3-82D9-6635-122F6801D253}|src\\system\\identity\\IdentityService\\IdentityService.csproj|solutionrelative:src\\system\\identity\\identityservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1F9D696-D843-4ADC-ACAE-28C3277BE69D}|src\\system\\notification\\NotificationService\\NotificationService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\notification\\notificationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1F9D696-D843-4ADC-ACAE-28C3277BE69D}|src\\system\\notification\\NotificationService\\NotificationService.csproj|solutionrelative:src\\system\\notification\\notificationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC3423B-A3D3-4E48-AB8D-88F31FD4FCB4}|src\\system\\otp\\OtpService\\OtpService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\otp\\otpservice\\otpservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EFC3423B-A3D3-4E48-AB8D-88F31FD4FCB4}|src\\system\\otp\\OtpService\\OtpService.csproj|solutionrelative:src\\system\\otp\\otpservice\\otpservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC3423B-A3D3-4E48-AB8D-88F31FD4FCB4}|src\\system\\otp\\OtpService\\OtpService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\otp\\otpservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC3423B-A3D3-4E48-AB8D-88F31FD4FCB4}|src\\system\\otp\\OtpService\\OtpService.csproj|solutionrelative:src\\system\\otp\\otpservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AECFA8-2A07-4F5F-3CBE-F85FFC66D81E}|src\\system\\transaction\\TransactionService\\TransactionService.csproj|d:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\transaction\\transactionservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AECFA8-2A07-4F5F-3CBE-F85FFC66D81E}|src\\system\\transaction\\TransactionService\\TransactionService.csproj|solutionrelative:src\\system\\transaction\\transactionservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OtpService",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\otp\\OtpService\\OtpService.csproj",
+              "RelativeDocumentMoniker": "src\\system\\otp\\OtpService\\OtpService.csproj",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\otp\\OtpService\\OtpService.csproj",
+              "RelativeToolTip": "src\\system\\otp\\OtpService\\OtpService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-28T01:34:35.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\account\\AccountService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\account\\AccountService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\account\\AccountService\\Program.cs",
+              "RelativeToolTip": "src\\system\\account\\AccountService\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAB4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:33:15.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\appsettings\\AppSettingsService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\appsettings\\AppSettingsService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\appsettings\\AppSettingsService\\Program.cs",
+              "RelativeToolTip": "src\\system\\appsettings\\AppSettingsService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:32:59.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\auth\\AuthService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\auth\\AuthService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\auth\\AuthService\\Program.cs",
+              "RelativeToolTip": "src\\system\\auth\\AuthService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:32:51.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\cms\\CmsService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\cms\\CmsService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\cms\\CmsService\\Program.cs",
+              "RelativeToolTip": "src\\system\\cms\\CmsService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:32:43.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\customer\\CustomerService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\customer\\CustomerService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\customer\\CustomerService\\Program.cs",
+              "RelativeToolTip": "src\\system\\customer\\CustomerService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:32:31.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dashboard\\DashboardService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\dashboard\\DashboardService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dashboard\\DashboardService\\Program.cs",
+              "RelativeToolTip": "src\\system\\dashboard\\DashboardService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:32:13.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\disbursement\\DisbursementService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\disbursement\\DisbursementService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\disbursement\\DisbursementService\\Program.cs",
+              "RelativeToolTip": "src\\system\\disbursement\\DisbursementService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:31:56.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\dopa\\DopaService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\Program.cs",
+              "RelativeToolTip": "src\\system\\dopa\\DopaService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:31:47.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\identity\\IdentityService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\identity\\IdentityService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\identity\\IdentityService\\Program.cs",
+              "RelativeToolTip": "src\\system\\identity\\IdentityService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:31:35.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\otp\\OtpService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\otp\\OtpService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\otp\\OtpService\\Program.cs",
+              "RelativeToolTip": "src\\system\\otp\\OtpService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:30:49.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\notification\\NotificationService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\notification\\NotificationService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\notification\\NotificationService\\Program.cs",
+              "RelativeToolTip": "src\\system\\notification\\NotificationService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:29:28.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\transaction\\TransactionService\\Program.cs",
+              "RelativeDocumentMoniker": "src\\system\\transaction\\TransactionService\\Program.cs",
+              "ToolTip": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\transaction\\TransactionService\\Program.cs",
+              "RelativeToolTip": "src\\system\\transaction\\TransactionService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T01:28:29.934Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

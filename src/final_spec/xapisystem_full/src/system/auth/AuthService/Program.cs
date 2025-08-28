@@ -1,10 +1,11 @@
-\
 using Elastic.Apm.AspNetCore;
 using Microsoft.AspNetCore.Http.Json;
 using Project.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration["ServiceName"] = Environment.GetEnvironmentVariable("SERVICE_NAME") ?? "unknown";
+builder.Configuration["ServiceName"] = "auth-service";
+var ServiceName = builder.Configuration["ServiceName"];
+builder.Services.AddElasticsearchLogging($"request-{ServiceName}");
 
 builder.Services.Configure<JsonOptions>(o =>
 {
@@ -14,12 +15,12 @@ builder.Services.Configure<JsonOptions>(o =>
 var app = builder.Build();
 
 app.UseElasticApm(builder.Configuration);
+app.UseRequestLogging();
 app.UseMiddleware<SourceHeaderMiddleware>();
-app.UseMiddleware<TraceIdRequiredMiddleware>();
+//app.UseMiddleware<TraceIdRequiredMiddleware>();
 app.UseMiddleware<FaultMiddleware>();
 
 app.MapGet("/ping", () => Results.Ok(new { ok = true }));
-\
 app.MapPost("/xapi/v1/auth/register", async (HttpContext ctx, RegReq req) =>
 {
     if (string.IsNullOrWhiteSpace(req.Mobile) || string.IsNullOrWhiteSpace(req.Pin) || string.IsNullOrWhiteSpace(req.FirstName) || string.IsNullOrWhiteSpace(req.LastName) || string.IsNullOrWhiteSpace(req.CitizenId) || req.AcceptTerms != true)

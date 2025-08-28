@@ -1,0 +1,13 @@
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\bin\Debug\net8.0\Project.Shared.deps.json
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\bin\Debug\net8.0\Project.Shared.dll
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\bin\Debug\net8.0\Project.Shared.pdb
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.csproj.AssemblyReference.cache
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.AssemblyInfoInputs.cache
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.AssemblyInfo.cs
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.csproj.CoreCompileInputs.cache
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.sourcelink.json
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.dll
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\refint\Project.Shared.dll
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\Project.Shared.pdb
+D:\workspaces\@git-tiddaw-godev\@ooo\day1\src\final_spec\xapisystem_full\src\shared\Project.Shared\obj\Debug\net8.0\ref\Project.Shared.dll

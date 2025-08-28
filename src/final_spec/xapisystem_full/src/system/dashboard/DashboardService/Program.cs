@@ -1,10 +1,11 @@
-\
 using Elastic.Apm.AspNetCore;
 using Microsoft.AspNetCore.Http.Json;
 using Project.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration["ServiceName"] = Environment.GetEnvironmentVariable("SERVICE_NAME") ?? "unknown";
+builder.Configuration["ServiceName"] = "dashboard-service";
+var ServiceName = builder.Configuration["ServiceName"];
+builder.Services.AddElasticsearchLogging($"request-{ServiceName}");
 
 builder.Services.Configure<JsonOptions>(o =>
 {
@@ -14,13 +15,13 @@ builder.Services.Configure<JsonOptions>(o =>
 var app = builder.Build();
 
 app.UseElasticApm(builder.Configuration);
+app.UseRequestLogging();
 app.UseMiddleware<SourceHeaderMiddleware>();
-app.UseMiddleware<TraceIdRequiredMiddleware>();
+//app.UseMiddleware<TraceIdRequiredMiddleware>();
 app.UseMiddleware<FaultMiddleware>();
 
 app.MapGet("/ping", () => Results.Ok(new { ok = true }));
-\
-app.MapGet("/xapi/v1/dashboard", async (HttpContext ctx) =>
+app.MapGet("/xapi/v1/dashboard", async (HttpContext ctx, string _) =>
 {
     var resp = new {
         cards = new object[] {

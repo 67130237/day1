@@ -1,4 +1,3 @@
-\
 namespace Project.Shared;
 
 public record FaultParams(int? DelayMs = null, int? HttpStatus = null, string? Message = null, int? TimeoutMs = null, string? SqlState = null);
@@ -31,6 +30,13 @@ public static class FaultParser
         "notification" => "NOTI",
         "appsettings" => "APPS",
         "cms" => "CMS",
+        "customer" => "CUST",
+        "dashboard" => "CMS",
+        "disbursement" => "DISB",
+        "identity" => "IDEN",
+        "transaction" => "TXN",
+        "auth" => "AUTH",
+        "account" => "ACC",
         _ => serviceName.ToUpperInvariant()
     };
 }
