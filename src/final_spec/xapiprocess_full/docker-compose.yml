@@ -1,0 +1,153 @@
+version: "3.9"
+services:
+  apm:
+    image: docker.elastic.co/apm/apm-server:8.13.4
+    environment:
+      - output.elasticsearch.enabled=false
+      - apm-server.host=0.0.0.0:8200
+      - apm-server.kibana.enabled=false
+    ports:
+      - "8200:8200"
+
+  dopa:
+    build: ./src/system/dopa/DopaService
+    environment:
+      - SERVICE_NAME=dopa
+      - ELASTIC_APM_SERVER_URL=http://apm:8200
+      - ELASTIC_APM_SERVICE_NAME=dopa-service
+      - ELASTIC_APM_ENVIRONMENT=dev
+      - ELASTIC_APM_SECRET_TOKEN=dev
+    ports:
+      - "7101:8080"
+    depends_on: [apm]
+
+  otp:
+    build: ./src/system/otp/OtpService
+    environment:
+      - SERVICE_NAME=otp
+      - ELASTIC_APM_SERVER_URL=http://apm:8200
+      - ELASTIC_APM_SERVICE_NAME=otp-service
+      - ELASTIC_APM_ENVIRONMENT=dev
+      - ELASTIC_APM_SECRET_TOKEN=dev
+    ports:
+      - "7102:8080"
+    depends_on: [apm]
+
+  notification:
+    build: ./src/system/notification/NotificationService
+    environment:
+      - SERVICE_NAME=notification
+      - ELASTIC_APM_SERVER_URL=http://apm:8200
+      - ELASTIC_APM_SERVICE_NAME=notification-service
+      - ELASTIC_APM_ENVIRONMENT=dev
+      - ELASTIC_APM_SECRET_TOKEN=dev
+    ports:
+      - "7103:8080"
+    depends_on: [apm]
+
+  appsettings:
+    build: ./src/system/appsettings/AppSettingsService
+    environment:
+      - SERVICE_NAME=appsettings
+      - ELASTIC_APM_SERVER_URL=http://apm:8200
+      - ELASTIC_APM_SERVICE_NAME=appsettings-service
+      - ELASTIC_APM_ENVIRONMENT=dev
+      - ELASTIC_APM_SECRET_TOKEN=dev
+    ports:
+      - "7104:8080"
+    depends_on: [apm]
+
+  cms:
+    build: ./src/system/cms/CmsService
+    environment:
+      - SERVICE_NAME=cms
+      - ELASTIC_APM_SERVER_URL=http://apm:8200
+      - ELASTIC_APM_SERVICE_NAME=cms-service
+      - ELASTIC_APM_ENVIRONMENT=dev
+      - ELASTIC_APM_SECRET_TOKEN=dev
+    ports:
+      - "7105:8080"
+    depends_on: [apm]
+account:
+  build: ./src/system/account/AccountService
+  environment:
+    - SERVICE_NAME=account
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=account-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7106:8080"
+  depends_on: [apm]
+
+transaction:
+  build: ./src/system/transaction/TransactionService
+  environment:
+    - SERVICE_NAME=transaction
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=transaction-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7107:8080"
+  depends_on: [apm]
+
+identity:
+  build: ./src/system/identity/IdentityService
+  environment:
+    - SERVICE_NAME=identity
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=identity-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7108:8080"
+  depends_on: [apm]
+
+dashboard:
+  build: ./src/system/dashboard/DashboardService
+  environment:
+    - SERVICE_NAME=dashboard
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=dashboard-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7109:8080"
+  depends_on: [apm]
+
+customer:
+  build: ./src/system/customer/CustomerService
+  environment:
+    - SERVICE_NAME=customer
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=customer-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7110:8080"
+  depends_on: [apm]
+
+disbursement:
+  build: ./src/system/disbursement/DisbursementService
+  environment:
+    - SERVICE_NAME=disbursement
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=disbursement-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7111:8080"
+  depends_on: [apm]
+
+auth:
+  build: ./src/system/auth/AuthService
+  environment:
+    - SERVICE_NAME=auth
+    - ELASTIC_APM_SERVER_URL=http://apm:8200
+    - ELASTIC_APM_SERVICE_NAME=auth-service
+    - ELASTIC_APM_ENVIRONMENT=dev
+    - ELASTIC_APM_SECRET_TOKEN=dev
+  ports:
+    - "7112:8080"
+  depends_on: [apm]

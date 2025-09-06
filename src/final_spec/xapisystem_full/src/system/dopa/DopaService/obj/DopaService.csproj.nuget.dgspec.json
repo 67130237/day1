@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj": {}
+    "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj": {}
   },
   "projects": {
-    "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj": {
+    "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj",
+        "projectUniqueName": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj",
         "projectName": "Project.Shared",
-        "projectPath": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj",
-        "packagesPath": "D:\\Users\\80006024\\.nuget\\packages\\",
-        "outputPath": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\obj\\",
+        "projectPath": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "D:\\Users\\80006024\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,9 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://api-micro-dev.ntl.co.th:8081/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nexus-nupkg.tiddaw.net/repository/nuget-ntl-group/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -93,20 +91,20 @@
         }
       }
     },
-    "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj": {
+    "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj",
+        "projectUniqueName": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj",
         "projectName": "DopaService",
-        "projectPath": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj",
-        "packagesPath": "D:\\Users\\80006024\\.nuget\\packages\\",
-        "outputPath": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\obj\\",
+        "projectPath": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\DopaService.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\system\\dopa\\DopaService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "D:\\Users\\80006024\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -115,16 +113,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://api-micro-dev.ntl.co.th:8081/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nexus-nupkg.tiddaw.net/repository/nuget-ntl-group/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj": {
-                "projectPath": "D:\\workspaces\\@git-tiddaw-godev\\@ooo\\day1\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj"
+              "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj": {
+                "projectPath": "D:\\Workspaces\\@DPU\\@IS\\src\\final_spec\\xapisystem_full\\src\\shared\\Project.Shared\\Project.Shared.csproj"
               }
             }
           }

@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingestion
+  namespace: creditai
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: ingestion } }
+  template:
+    metadata: { labels: { app: ingestion } }
+    spec:
+      containers:
+        - name: ingestion
+          image: creditai/ingestion:latest
+          ports: [{ containerPort: 8080 }]

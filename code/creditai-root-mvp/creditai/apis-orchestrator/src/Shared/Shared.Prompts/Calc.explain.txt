@@ -1,0 +1,5 @@
+Explain the calculation result in simple terms. Provide:
+- Monthly payment
+- Total interest
+- Assumptions used
+If any parameter was defaulted or inferred, say so.

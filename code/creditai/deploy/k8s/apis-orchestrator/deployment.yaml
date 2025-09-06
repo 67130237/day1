@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apis-orchestrator
+  namespace: creditai
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: apis-orchestrator }
+  template:
+    metadata:
+      labels: { app: apis-orchestrator }
+    spec:
+      containers:
+        - name: chatapi
+          image: creditai/chatapi:latest
+          ports: [{ containerPort: 8080 }]
+          envFrom:
+            - secretRef: { name: creditai-secrets }

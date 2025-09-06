@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "ChatApi": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5148",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "OPENROUTER_API_KEY": "REPLACE_ME"
+      }
+    }
+  }
+}

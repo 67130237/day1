@@ -1,0 +1,16 @@
+{
+  "router": {
+    "intent": "openai/gpt-4o-mini"
+  },
+  "agents": {
+    "sql": "openai/gpt-4o-mini",
+    "rag": "openai/gpt-4o",
+    "calc": "openai/gpt-4o-mini"
+  },
+  "composer": {
+    "final": "openai/gpt-4o"
+  },
+  "embeddings": {
+    "default": "openai/text-embedding-3-small"
+  }
+}

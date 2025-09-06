@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: creditai-mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=StrongPassword1!
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+      - ./init:/docker-entrypoint-initdb.d  # For reference; MSSQL image doesn't auto-run .sql here by default
+volumes:
+  mssql_data:

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.Abstractions\Shared.Abstractions.csproj" />
+    <ProjectReference Include="..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shared\Shared.Prompts\Shared.Prompts.csproj" />
+    <ProjectReference Include="..\Integrations\Integrations.SemanticKernel\Integrations.SemanticKernel.csproj" />
+    <ProjectReference Include="..\Integrations\Integrations.OpenRouter\Integrations.OpenRouter.csproj" />
+    <ProjectReference Include="..\Integrations\Integrations.Mcp\Integrations.Mcp.csproj" />
+    <ProjectReference Include="..\..\apis-orchestrator\src\Guardrails\Guardrails.Core\Guardrails.Core.csproj" />
+    <ProjectReference Include="..\Orchestrator.Core\Orchestrator.Core.csproj" />
+    <ProjectReference Include="..\Agents\Agent.SqlAnalyst\Agent.SqlAnalyst.csproj" />
+    <ProjectReference Include="..\Agents\Agent.RagReader\Agent.RagReader.csproj" />
+    <ProjectReference Include="..\Agents\Agent.FinancialCalculator\Agent.FinancialCalculator.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+</Project>

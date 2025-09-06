@@ -1,0 +1,26 @@
+{
+  "roles": {
+    "admin": {
+      "allow": [
+        "*"
+      ],
+      "deny": []
+    },
+    "user": {
+      "allow": [
+        "chat:*"
+      ],
+      "deny": []
+    }
+  },
+  "bindings": [
+    {
+      "userId": "user-123",
+      "role": "admin"
+    },
+    {
+      "userId": "*",
+      "role": "user"
+    }
+  ]
+}

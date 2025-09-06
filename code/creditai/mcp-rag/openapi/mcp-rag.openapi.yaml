@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: MCP RAG Tools API
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8082
+paths:
+  /tools/rag.hybrid:
+    post:
+      operationId: rag.hybrid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query: { type: string }
+                topK: { type: integer }
+                filters: { type: object }
+      responses:
+        '200':
+          description: ok
+  /tools/rag.getDoc:
+    post:
+      operationId: rag.getDoc
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                docId: { type: string }
+                sectionId: { type: string }
+      responses:
+        '200': { description: ok }

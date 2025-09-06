@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup>
+    <!-- Default target framework for all projects; individual projects can override -->
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12.0</LangVersion>
+
+    <!-- Analyzer & warnings -->
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+
+    <!-- CI-friendly builds -->
+    <ContinuousIntegrationBuild Condition="'$(BUILD_BUILDNUMBER)' != ''">true</ContinuousIntegrationBuild>
+    <RepositoryUrl Condition="'$(RepositoryUrl)' == ''">https://example.com/creditai.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- Common package sources or settings can be placed here -->
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" Condition="'$(IsPackable)'=='true'"/>
+  </ItemGroup>
+</Project>

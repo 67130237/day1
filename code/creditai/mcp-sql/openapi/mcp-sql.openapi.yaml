@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: MCP SQL Tools API
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8081
+paths:
+  /tools/sql.describeSchema:
+    post:
+      operationId: sql.describeSchema
+      responses:
+        '200':
+          description: ok
+  /tools/sql.runQuery:
+    post:
+      operationId: sql.runQuery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sql: { type: string }
+                parameters: { type: array, items: { nullable: true } }
+                view: { type: string }
+                columns: { type: array, items: { type: string } }
+                eq: { type: object, additionalProperties: true }
+                top: { type: integer }
+                timeoutSeconds: { type: integer }
+      responses:
+        '200': { description: ok }
+        '400': { description: bad request }

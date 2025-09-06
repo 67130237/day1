@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-rag
+  namespace: creditai
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: mcp-rag } }
+  template:
+    metadata: { labels: { app: mcp-rag } }
+    spec:
+      containers:
+        - name: mcp-rag
+          image: creditai/mcp-rag:latest
+          ports: [{ containerPort: 8080 }]

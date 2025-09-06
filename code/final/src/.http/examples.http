@@ -1,0 +1,36 @@
+// @name health
+GET http://localhost:5000/health
+X-API-Key: dev-key-123
+
+###
+// @name chat
+POST http://localhost:5000/chat
+Content-Type: application/json
+X-API-Key: dev-key-123
+
+{
+  "text": "ขอดูนโยบายการคิดดอกเบี้ยสินเชื่อรถ"
+}
+
+###
+// @name sql
+POST http://localhost:5000/agents/sql:run
+Content-Type: application/json
+X-API-Key: dev-key-123
+
+{
+  "sql": "SELECT TOP 10 * FROM sys.objects",
+  "top": 10,
+  "timeoutSec": 30
+}
+
+###
+// @name rag search
+POST http://localhost:5000/rag/search
+Content-Type: application/json
+X-API-Key: dev-key-123
+
+{
+  "query": "กฎการกู้ยืม",
+  "k": 5
+}

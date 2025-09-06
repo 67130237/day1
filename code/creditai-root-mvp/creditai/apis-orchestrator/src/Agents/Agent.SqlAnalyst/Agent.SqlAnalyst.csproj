@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Shared.Abstractions\Shared.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Integrations\Integrations.SemanticKernel\Integrations.SemanticKernel.csproj" />
+    <ProjectReference Include="..\..\Integrations\Integrations.Mcp\Integrations.Mcp.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+{
+  "rules": [
+    {
+      "name": "thai_national_id",
+      "pattern": "\\b\\d{13}\\b",
+      "mask": "****"
+    },
+    {
+      "name": "phone_th",
+      "pattern": "\\b(0\\d{8,9})\\b",
+      "mask": "***"
+    },
+    {
+      "name": "email",
+      "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+      "mask": "***"
+    }
+  ]
+}

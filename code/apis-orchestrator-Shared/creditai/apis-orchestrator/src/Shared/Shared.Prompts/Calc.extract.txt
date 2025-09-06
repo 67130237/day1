@@ -1,0 +1,7 @@
+Extract calculation parameters from the user utterance for a finance calculator.
+Return a JSON object with fields:
+- principal (number)
+- annualRatePct (number)
+- termMonths (integer)
+- fees (number, optional)
+If not all can be extracted, include null for unknown fields.

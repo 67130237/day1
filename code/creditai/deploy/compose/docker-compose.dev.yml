@@ -1,0 +1,74 @@
+version: "3.9"
+services:
+  chatapi:
+    build: ../apis-orchestrator/src/ChatApi
+    ports: ["8080:8080"]
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - ConnectionStrings__SqlRo=${SQLRO_CONN}
+      - Rag__Qdrant__Endpoint=http://qdrant:6333
+    depends_on: [mcp-sql, mcp-rag, redis, qdrant, minio]
+
+  mcp-sql:
+    build: ../mcp-sql
+    ports: ["8081:8080"]
+    environment:
+      - ConnectionStrings__SqlRo=${SQLRO_CONN}
+    depends_on: [mssql]
+
+  mcp-rag:
+    build: ../mcp-rag
+    ports: ["8082:8080"]
+    environment:
+      - Rag__Qdrant__Endpoint=http://qdrant:6333
+      - OpenRouter__ApiKey=${OPENROUTER_API_KEY}
+    depends_on: [qdrant]
+
+  ingestion:
+    build: ../ingestion
+    ports: ["8083:8080"]
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - Rag__Qdrant__Endpoint=http://qdrant:6333
+    volumes:
+      - ../data-sources/docs-seed:/data/docs:ro
+    depends_on: [qdrant]
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=StrongPassword1!
+    ports: ["1433:1433"]
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333","6334:6334"]
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+    volumes:
+      - redis_data:/data
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+
+volumes:
+  mssql_data:
+  qdrant_data:
+  redis_data:
+  minio_data:

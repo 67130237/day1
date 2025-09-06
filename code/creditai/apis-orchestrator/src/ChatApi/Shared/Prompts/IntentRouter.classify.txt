@@ -1,0 +1,7 @@
+Classify the user's message into one of the following intents:
+- SqlAnalysis
+- RagRead
+- FinancialCalc
+- ChitChat
+
+Return exactly one label.

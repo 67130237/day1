@@ -1,0 +1,55 @@
+# General
+*.user
+*.suo
+*.DS_Store
+*.orig
+*.log
+*.tmp
+*.cache
+Thumbs.db
+
+# Build outputs
+bin/
+obj/
+out/
+artifacts/
+TestResults/
+.vs/
+_ReSharper.Caches/
+.idea/
+.cache/
+
+# NuGet
+*.nupkg
+.nuget/
+packages/
+**/packages/*
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# VSCode
+.vscode/
+.history/
+
+# Dotnet tools
+.dotnet-tools/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Docker
+**/docker-compose.override.yml
+**/.docker/
+*.env.local
+
+# Node (if present in UI)
+node_modules/
+
+# Secrets (do not commit actual secrets)
+**/appsettings.Local.json
+**/secrets.json
+.env

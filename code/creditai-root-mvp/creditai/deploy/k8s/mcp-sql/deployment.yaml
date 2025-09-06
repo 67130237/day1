@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-sql
+  namespace: creditai
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: mcp-sql } }
+  template:
+    metadata: { labels: { app: mcp-sql } }
+    spec:
+      containers:
+        - name: mcp-sql
+          image: creditai/mcp-sql:latest
+          ports: [{ containerPort: 8080 }]
